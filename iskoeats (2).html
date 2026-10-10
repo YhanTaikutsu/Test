@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IskoEats | PUP Sta. Mesa Lagoon Food Pre-Order</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--maroon:#6b1015;--red:#d12b2b;--gold:#f7b500;--ink:#2a1a1a;--mut:#85736f;--bg:#faf5f2;--line:#eadcd8;--ok:#16794a;--bad:#b3261e;--sh:0 1px 2px #3b0d0d10,0 10px 28px #3b0d0d14}
+*{box-sizing:border-box}
+body{margin:0;font-family:Nunito,system-ui,sans-serif;color:var(--ink);line-height:1.5;background:radial-gradient(1000px 420px at 95% -8%,#f7b50030,transparent),radial-gradient(800px 480px at -10% 0,#d12b2b1c,transparent),var(--bg);background-attachment:fixed;min-height:100vh}
+h1,h2,h3{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:.04em;margin:0}
+button,input,select{font:inherit}
+.top{background:linear-gradient(100deg,#4d0a0f,var(--maroon) 55%,#8c1a1f);color:#fff;display:flex;align-items:center;gap:12px;padding:11px 22px;position:sticky;top:0;z-index:5;box-shadow:0 4px 18px #3b0d0d40}
+.logo{font-family:'Bebas Neue',Impact,sans-serif;font-size:30px;letter-spacing:.05em}.logo b{color:var(--gold);font-weight:400}
+.top .sp{flex:1}.top small{opacity:.9;font-weight:700;text-transform:capitalize}
+.avatar{width:34px;height:34px;border-radius:50%;background:var(--gold);color:var(--maroon);display:grid;place-items:center;font-weight:800}
+.top .btn.ghost{background:#ffffff1f;color:#fff;border-color:#ffffff40}.top .btn.ghost:hover{background:#ffffff38}
+.wrap{max-width:1080px;margin:0 auto;padding:22px 20px 96px}
+.hi{font-size:20px;margin:0 0 14px;color:var(--mut)}.hi b{color:var(--maroon)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px}
+.stat{background:#fff;border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:12px;box-shadow:var(--sh);border:1px solid var(--line)}
+.stat span{font-size:26px;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#fff1d0,#ffd9d4);display:grid;place-items:center}
+.stat b{display:block;font-size:24px;line-height:1.1;color:var(--maroon)}.stat small{color:var(--mut);font-weight:700}
+.tabs{display:inline-flex;gap:4px;flex-wrap:wrap;margin-bottom:20px;background:#fff;padding:5px;border-radius:14px;border:1px solid var(--line);box-shadow:var(--sh)}
+.tabs button{background:none;border:0;padding:9px 18px;cursor:pointer;font-weight:800;color:var(--mut);border-radius:10px;transition:.2s}
+.tabs button:hover{color:var(--red);background:#fdf1ee}.tabs button.on{background:linear-gradient(135deg,var(--red),var(--maroon));color:#fff;box-shadow:0 4px 12px #d12b2b55}
+.btn{background:linear-gradient(135deg,var(--red),#a81d22);color:#fff;border:0;border-radius:10px;padding:10px 18px;font-weight:800;cursor:pointer;transition:transform .15s,box-shadow .15s;box-shadow:0 3px 10px #d12b2b40}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px #d12b2b55}.btn:active{transform:scale(.97)}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:none}.btn.ghost:hover{background:#fdf1ee}
+.btn.sm{padding:6px 12px;font-size:13px;border-radius:8px}.btn.ok{background:linear-gradient(135deg,#1f9d62,var(--ok));box-shadow:0 3px 10px #16794a40}
+.btn.bad{background:linear-gradient(135deg,#d94a3f,var(--bad));box-shadow:0 3px 10px #b3261e40}.btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+input,select{width:100%;padding:10px 13px;border:1.5px solid var(--line);border-radius:10px;background:#fff;transition:.2s}
+input:focus,select:focus{outline:0;border-color:var(--red);box-shadow:0 0 0 4px #d12b2b22}button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+label{display:block;font-weight:800;font-size:14px;margin-bottom:13px}label input,label select{margin-top:5px;font-weight:400}
+input[type=checkbox]{appearance:none;-webkit-appearance:none;width:46px!important;height:26px!important;padding:0;border-radius:99px;background:#d9cdca;position:relative;cursor:pointer;border:0;margin:0}
+input[type=checkbox]::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 3px #0004}
+input[type=checkbox]:checked{background:var(--ok)}input[type=checkbox]:checked::after{left:23px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:16px;box-shadow:var(--sh)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:0 16px 16px;display:flex;flex-direction:column;gap:6px;box-shadow:var(--sh);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px #3b0d0d24}
+.thumb{margin:0 -16px 8px;height:96px;display:grid;place-items:center;font-size:52px;background:linear-gradient(135deg,#fff1d0,#ffd2cb)}
+.card h3{font-size:24px;color:var(--maroon)}.card p{margin:0;color:var(--mut);font-size:14px}
+.price{font-weight:800;color:var(--red);font-size:20px}
+.tag{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:800;padding:3px 10px;border-radius:99px;background:#eee;text-transform:capitalize}
+.tag::before{content:'';width:7px;height:7px;border-radius:50%;background:currentColor}
+.tag.ok{background:#d9f2e3;color:var(--ok)}.tag.bad{background:#fbdcd9;color:var(--bad)}.tag.wait{background:#fff0c2;color:#8a6200}
+.row{display:flex;gap:8px;justify-content:flex-end;align-items:center;flex-wrap:wrap}
+.bar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:14px}.bar h2{font-size:34px;color:var(--maroon)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+th{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}tr:last-child td{border:0}tr:hover>td{background:#fff9f7}
+.scroll{overflow-x:auto}td input[type=number]{width:100px}
+.empty{color:var(--mut);text-align:center;padding:34px;font-weight:700}.empty::before{content:'🍽️';display:block;font-size:38px;margin-bottom:4px}
+.steps{display:flex;margin:12px 0 8px}.steps i{flex:1;font-style:normal;font-size:12px;font-weight:800;color:var(--mut);text-align:center;position:relative;padding-top:18px}
+.steps i::before{content:'';position:absolute;top:0;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--line);z-index:1}
+.steps i::after{content:'';position:absolute;top:5px;left:-50%;width:100%;height:2px;background:var(--line)}.steps i:first-child::after{display:none}
+.steps i.d{color:var(--ink)}.steps i.d::before,.steps i.d::after{background:var(--ok)}
+.bg{position:fixed;inset:-24px;z-index:-1;background:linear-gradient(rgba(107,16,21,.55),rgba(36,22,22,.65)),url('pup-building.jpg') center/cover no-repeat,linear-gradient(135deg,#6b1015,#241616);filter:blur(7px)}
+.auth{max-width:440px;margin:6vh auto;box-shadow:0 24px 70px #0007;border-radius:20px;animation:pop .45s ease}
+.hero{background:linear-gradient(135deg,#4d0a0f,var(--maroon));color:#fff;border-radius:20px 20px 0 0;padding:26px 28px}
+.hero h1{font-size:62px;line-height:1}.hero h1 b{color:var(--gold);font-weight:400}.hero p{margin:6px 0 12px;opacity:.92}
+.chips{display:flex;gap:6px;flex-wrap:wrap}.chips span{font-size:12px;font-weight:800;background:#ffffff22;padding:4px 10px;border-radius:99px}
+.authbox{background:#ffffffee;backdrop-filter:blur(8px);border-radius:0 0 20px 20px;padding:22px 28px 26px}
+.seg{display:flex;background:#f3e9e6;border-radius:12px;padding:4px;margin-bottom:18px;gap:4px}
+.seg button{flex:1;border:0;background:none;padding:9px;cursor:pointer;font-weight:800;color:var(--mut);border-radius:9px;transition:.2s}
+.seg button.on{background:#fff;color:var(--red);box-shadow:0 2px 8px #0002}
+.msg{padding:10px 14px;border-radius:10px;margin-bottom:14px;font-size:14px;font-weight:700}.msg.e{background:#fbdcd9;color:var(--bad)}.msg.s{background:#d9f2e3;color:var(--ok)}
+.demo{font-size:13px;color:var(--mut);margin-top:16px;border-top:1px dashed var(--line);padding-top:12px}
+#modal{position:fixed;inset:0;background:#2a0b0e99;backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;z-index:20;padding:16px}
+.mb{background:#fff;border-radius:20px;padding:24px;width:100%;max-width:430px;max-height:90vh;overflow:auto;animation:pop .25s ease;box-shadow:0 24px 70px #0006}.mb h3{font-size:32px;color:var(--maroon);margin-bottom:14px}
+#toast{position:fixed;right:16px;top:74px;display:flex;flex-direction:column;gap:8px;z-index:30}
+.t{background:var(--ink);color:#fff;padding:13px 18px;border-radius:12px;border-left:5px solid var(--gold);max-width:330px;font-weight:700;box-shadow:0 10px 30px #0004;animation:slide .35s ease}.t.ready{background:var(--ok);border-color:#fff}
+.qty{display:flex;gap:8px;align-items:center;font-weight:800}.qty button{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-weight:800;font-size:16px}.qty button:hover{border-color:var(--red);color:var(--red)}
+.tot{font-size:26px;font-weight:800;text-align:right;color:var(--maroon)}
+.fab{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:8;border:0;border-radius:99px;padding:14px 26px;font-weight:800;font-size:16px;color:#fff;cursor:pointer;background:linear-gradient(135deg,var(--red),var(--maroon));box-shadow:0 12px 32px #6b101566}
+label.agree{display:flex;gap:10px;align-items:flex-start;font-weight:600;font-size:13px;margin:4px 0 16px}
+.agree input[type=checkbox]{appearance:auto;-webkit-appearance:checkbox;width:20px!important;height:20px!important;border-radius:4px;margin:2px 0 0;flex:none;accent-color:var(--red);background:#fff}
+.agree input[type=checkbox]::after{display:none}
+.mb ul{margin:4px 0 10px;padding-left:20px}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes slide{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}
+@media(max-width:640px){.top small{display:none}.hero h1{font-size:48px}.wrap{padding:16px 14px 96px}.stats{grid-template-columns:repeat(2,1fr)}.auth{margin:3vh 12px}.tabs{display:flex}.tabs button{flex:1;padding:9px 8px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="modal"></div>
+<div id="toast" aria-live="polite"></div>
+<script>
+/* ===== Data layer (browser localStorage acts as the demo database) ===== */
+const K='pupulutan_db_v1';
+const uid=()=>Math.random().toString(36).slice(2,9);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const money=n=>'₱'+Number(n).toFixed(2);
+function seed(){return{
+ users:[
+  {id:'a1',role:'admin',name:'System Admin',email:'admin@pup.edu.ph',pass:'admin123',status:'approved'},
+  {id:'s1',role:'student',name:'Juan Dela Cruz',idno:'2024-00001-MN-0',email:'student@pup.edu.ph',pass:'student123',status:'approved'},
+  {id:'v1',role:'vendor',name:'Aling Nena',email:'vendor@pup.edu.ph',pass:'vendor123',status:'approved',stallId:'st1'}],
+ stalls:[{id:'st1',ownerId:'v1',name:"Aling Nena's Kainan",desc:'Rice meals and Filipino comfort food.',hours:'7:00 AM - 5:00 PM'},
+  {id:'st2',ownerId:'',name:'Lagoon Snack Corner',desc:'Merienda favorites and cold drinks.',hours:'8:00 AM - 6:00 PM'}],
+ items:[
+  {id:'i1',stallId:'st1',name:'Chicken Adobo with Rice',desc:'Classic adobo, steamed rice',price:70,avail:true},
+  {id:'i2',stallId:'st1',name:'Pork Sisig',desc:'Sizzling, with rice',price:85,avail:true},
+  {id:'i3',stallId:'st1',name:'Tapsilog',desc:'Beef tapa, garlic rice, egg',price:75,avail:false},
+  {id:'i4',stallId:'st2',name:'Fishball (10 pcs)',desc:'With sweet and spicy sauce',price:20,avail:true},
+  {id:'i5',stallId:'st2',name:'Iced Coffee',desc:'16 oz',price:45,avail:true},
+  {id:'i6',stallId:'st2',name:'Banana Cue',desc:'2 sticks',price:25,avail:true}],
+ orders:[]}}
+function load(){try{const d=JSON.parse(localStorage.getItem(K));if(d&&d.users)return d}catch(e){}return seed()}
+let db=load();
+function save(){try{localStorage.setItem(K,JSON.stringify(db))}catch(e){}}
+const U=id=>db.users.find(u=>u.id==id),S=id=>db.stalls.find(s=>s.id==id),I=id=>db.items.find(i=>i.id==id);
+const stallVisible=s=>!s.ownerId||(U(s.ownerId)&&U(s.ownerId).status=='approved');
+
+/* ===== State ===== */
+let me=null,tab='',mode='login',rl='student',cart={},fStall='',q='',msg=null;
+const app=document.getElementById('app');
+function toast(t,c=''){const d=document.createElement('div');d.className='t '+c;d.textContent=t;document.getElementById('toast').append(d);setTimeout(()=>d.remove(),4500)}
+function render(){app.innerHTML=!me?authView():({admin:adminView,student:studentView,vendor:vendorView})[me.role]()}
+const tabsHtml=(list)=>`<div class="tabs" role="tablist">${list.map(([k,l])=>`<button class="${tab==k?'on':''}" onclick="go('${k}')">${l}</button>`).join('')}</div>`;
+function go(t){tab=t;render()}
+const shell=(sub,body)=>{const n=Object.values(cart).reduce((a,b)=>a+b,0),L=me.role=='student'?cartLines():[],t=L.reduce((a,l)=>a+l.it.price*l.q,0),h=new Date().getHours();
+ return `<header class="top"><span class="logo">Isko<b>Eats</b></span><span class="sp"></span><span class="avatar">${esc(me.name[0])}</span><small>${esc(me.name)} · ${me.role}</small><button class="btn ghost sm" onclick="logout()">Log out</button></header><main class="wrap"><p class="hi">Good ${h<12?'morning':h<18?'afternoon':'evening'}, <b>${esc(me.name.split(' ')[0])}</b> 👋</p>${stats()}${tabsHtml(sub)}${body}</main>${L.length&&tab!='cart'?`<button class="fab" onclick="go('cart')">🛒 ${n} item${n>1?'s':''} · ${money(t)}</button>`:''}`}
+function stats(){let a;
+ if(me.role=='admin')a=[['⏳','Pending',db.users.filter(u=>u.status=='pending').length],['🎓','Students',db.users.filter(u=>u.role=='student').length],['🏪','Vendors',db.users.filter(u=>u.role=='vendor').length],['🧾','Orders',db.orders.length]];
+ else if(me.role=='vendor'){const it=db.items.filter(i=>i.stallId==me.stallId),od=db.orders.filter(o=>o.stallId==me.stallId);a=[['🍱','Food items',it.length],['✅','Available',it.filter(i=>i.avail).length],['🔔','Pending orders',od.filter(o=>o.status=='Pending').length],['💰','Sales',money(od.filter(o=>o.status!='Cancelled').reduce((x,o)=>x+o.total,0))]]}
+ else{const od=db.orders.filter(o=>o.userId==me.id);a=[['🔥','Active orders',od.filter(o=>['Pending','Preparing','Ready'].includes(o.status)).length],['🛒','In cart',Object.values(cart).reduce((x,y)=>x+y,0)],['🧾','Total orders',od.length]]}
+ return `<div class="stats">${a.map(([e,l,v])=>`<div class="stat"><span>${e}</span><div><b>${v}</b><small>${l}</small></div></div>`).join('')}</div>`}
+const EMO=[[/coffee|latte/,'☕'],[/banana|cue|turon/,'🍌'],[/fish ?ball|kwek|isaw|skewer/,'🍢'],[/chicken|adobo|fried/,'🍗'],[/pork|sisig|lechon|liempo/,'🥘'],[/beef|tapa|silog|rice/,'🍚'],[/pancit|noodle|mami|lomi/,'🍜'],[/burger/,'🍔'],[/egg/,'🍳'],[/juice|tea|soda|drink|shake/,'🥤'],[/cake|sweet|halo|ice/,'🍧']];
+const emo=n=>(EMO.find(([r])=>r.test(n.toLowerCase()))||[0,'🍽️'])[1];
+function stepper(st){if(st=='Cancelled')return '';const L=['Pending','Preparing','Ready','Completed'],k=L.indexOf(st);return `<div class="steps">${L.map((x,i)=>`<i class="${i<=k?'d':''}">${x}</i>`).join('')}</div>`}
+
+/* ===== Modal ===== */
+let MCB;
+function modal(title,fields,cb,ok='Save'){MCB=cb;
+ document.getElementById('modal').innerHTML=`<div class="mb"><form onsubmit="return mok(event)"><h3>${title}</h3>${fields.map(f=>`<label>${f.l||''}${f.t=='select'?`<select name="${f.k}">${f.o.map(o=>`<option ${o==f.v?'selected':''}>${esc(o)}</option>`).join('')}</select>`:f.t=='html'?f.h:`<input name="${f.k}" type="${f.t||'text'}" value="${esc(f.v)}" ${f.t=='number'?'min="0" step="0.5"':''} required>`}</label>`).join('')}<div class="row"><button type="button" class="btn ghost" onclick="mclose()">Cancel</button><button class="btn">${ok}</button></div></form></div>`;
+ document.getElementById('modal').style.display='flex'}
+function mok(e){e.preventDefault();const v=Object.fromEntries(new FormData(e.target));if(MCB(v)!==false)mclose();return false}
+function mclose(){document.getElementById('modal').style.display='none'}
+
+/* ===== Terms and agreement ===== */
+function showTerms(){
+ const st=rl=='student',li=a=>'<ul>'+a.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+ const own=st?li(['Give your real name, student number and PUP email. Accounts with false details may be rejected or removed.','Keep your password private. You are responsible for activity on your account.','Pre-orders are meant to be picked up. Orders not claimed on time may be cancelled by the stall.','E-payment in this system is a demo. Check refunds and payment problems with the stall or the system administrator.','Be respectful: no fake, prank or repeated spam orders.']):
+  li(['You are an authorized operator of the stall you register, and your details are true.','Keep your menu, prices and availability accurate and up to date.','Honor the price shown when a student places a pre-order, and prepare accepted orders on time.','Follow PUP and food-safety rules for preparing and selling food.','Update order status honestly (Preparing, Ready, Completed) so students are not misled.']);
+ modal((st?'Student':'Vendor')+' agreement',[{t:'html',l:'',h:`<div style="font-weight:400;font-size:14px;line-height:1.55;max-height:55vh;overflow:auto;padding-right:6px"><p><b>1. About IskoEats.</b> IskoEats is a school project (PUP iTECH, Programming 3) for pre-ordering food from the PUP Sta. Mesa Lagoon stalls. By signing up you accept these terms.</p><p><b>2. Your responsibilities.</b></p>${own}<p><b>3. Approval.</b> New ${st?'student':'vendor'} accounts need approval from the system administrator before you can log in. The administrator may suspend or delete accounts that break these terms.</p><p><b>4. Privacy.</b> We collect only what the service needs: your name, email, ${st?'student number, ':'stall details, '}and ${st?'your order history':'the orders your stall receives'}. ${st?'Your name and order details are shown to the stall preparing your order. ':'Student names and order details are used only to prepare and release orders. '}Your information is never sold. Order history is kept to help prevent scams and settle disputes. The administrator can view account information to manage the system.</p><p><b>5. Data in this prototype.</b> Data is saved in your own browser for demonstration. Do not enter real card or e-wallet numbers.</p><p><b>6. Changes.</b> These terms may be updated. Continued use means you accept the changes.</p></div>`}],()=>{},'I understand')}
+/* ===== Auth ===== */
+function authView(){
+ const su=mode=='signup';
+ return `<div class="bg"></div><div class="auth"><div class="hero"><h1>Isko<b>Eats</b></h1><p>Pre-order your food from the PUP Sta. Mesa Lagoon stalls. Skip the line.</p><div class="chips"><span>⚡ Skip the queue</span><span>🍱 Live menu</span><span>💳 E-payment</span></div></div>
+ <div class="authbox"><div class="seg">${['student','vendor','admin'].map(r=>`<button class="${rl==r?'on':''}" onclick="rl='${r}';if(rl=='admin')mode='login';msg=null;render()">${r[0].toUpperCase()+r.slice(1)}</button>`).join('')}</div>
+ <h2 style="font-size:30px;color:var(--maroon);margin-bottom:10px">${su?'Create '+rl+' account':'Log in as '+rl}</h2>
+ ${msg?`<div class="msg ${msg[0]}">${esc(msg[1])}</div>`:''}
+ <form onsubmit="return ${su?'signup':'login'}(event)">
+ ${su?`<label>Full name<input name="name" required></label>`:''}
+ ${su&&rl=='student'?`<label>Student number<input name="idno" placeholder="2024-00000-MN-0" required></label>`:''}
+ ${su&&rl=='vendor'?`<label>Stall name<input name="stall" required></label><label>Stall description<input name="desc" required></label>`:''}
+ <label>Email<input name="email" type="email" required></label>
+ <label>Password<input name="pass" type="password" minlength="6" required></label>
+ ${su?`<label class="agree"><input type="checkbox" name="agree" required><span>I have read, understood and agree to the <a href="#" onclick="showTerms();return false">Terms, Privacy Policy and User Agreement</a>.</span></label>`:''}<button class="btn" style="width:100%">${su?'Sign up':'Log in'}</button></form>
+ ${rl!='admin'?`<p style="text-align:center;font-size:14px;margin:14px 0 0">${su?'Already registered?':'No account yet?'} <a href="#" onclick="mode='${su?'login':'signup'}';msg=null;render();return false">${su?'Log in':'Sign up'}</a></p>`:''}
+ <div class="demo"><b>Demo accounts</b><br>Admin: admin@pup.edu.ph / admin123<br>Student: student@pup.edu.ph / student123<br>Vendor: vendor@pup.edu.ph / vendor123</div></div></div>`}
+function login(e){e.preventDefault();const f=Object.fromEntries(new FormData(e.target));
+ const u=db.users.find(u=>u.role==rl&&u.email.toLowerCase()==f.email.toLowerCase()&&u.pass==f.pass);
+ if(!u)msg=['e','Wrong email or password for this account type.'];
+ else if(u.status=='pending')msg=['e','Your account is waiting for admin approval.'];
+ else if(u.status=='rejected')msg=['e','Your sign-up request was rejected. Contact the system administrator.'];
+ else{me=u;msg=null;cart={};tab=({admin:'approvals',student:'menu',vendor:'items'})[u.role]}
+ render();return false}
+function signup(e){e.preventDefault();const f=Object.fromEntries(new FormData(e.target));
+ if(db.users.some(u=>u.email.toLowerCase()==f.email.toLowerCase())){msg=['e','That email is already registered.'];render();return false}
+ if(!f.agree){msg=['e','Please read and accept the agreement to sign up.'];render();return false}
+ const u={id:uid(),role:rl,name:f.name,email:f.email,pass:f.pass,status:'pending',agreedAt:new Date().toLocaleString('en-PH')};
+ if(rl=='student')u.idno=f.idno;
+ else{u.stallId=uid();db.stalls.push({id:u.stallId,ownerId:u.id,name:f.stall,desc:f.desc,hours:'Set by vendor'})}
+ db.users.push(u);save();mode='login';msg=['s','Sign-up sent! You can log in once an admin approves your account.'];render();return false}
+function logout(){me=null;mode='login';msg=null;render()}
+
+/* ===== Admin ===== */
+function adminView(){
+ const pend=db.users.filter(u=>u.status=='pending');
+ const T=[['approvals',`Approvals${pend.length?' ('+pend.length+')':''}`],['students','Students'],['vendors','Vendors'],['stalls','Stalls'],['food','Food items']];
+ let b='';
+ if(tab=='approvals')b=`<div class="bar"><h2>Pending sign-ups</h2></div>`+(pend.length?`<div class="panel scroll"><table><tr><th>Name</th><th>Type</th><th>Email</th><th>Details</th><th></th></tr>${pend.map(u=>`<tr><td>${esc(u.name)}</td><td>${u.role}</td><td>${esc(u.email)}</td><td>${esc(u.role=='student'?u.idno:S(u.stallId)?.name)}</td><td class="row"><button class="btn sm ok" onclick="setStatus('${u.id}','approved')">Approve</button><button class="btn sm bad" onclick="setStatus('${u.id}','rejected')">Reject</button></td></tr>`).join('')}</table></div>`:`<p class="empty">No pending requests.</p>`);
+ if(tab=='students'||tab=='vendors'){const r=tab=='students'?'student':'vendor',L=db.users.filter(u=>u.role==r);
+  b=`<div class="bar"><h2>${tab}</h2><button class="btn" onclick="userForm('${r}')">+ Add ${r}</button></div><div class="panel scroll"><table><tr><th>Name</th><th>Email</th><th>${r=='student'?'Student no.':'Stall'}</th><th>Status</th><th></th></tr>${L.map(u=>`<tr><td>${esc(u.name)}</td><td>${esc(u.email)}</td><td>${esc(r=='student'?u.idno:S(u.stallId)?.name)}</td><td><span class="tag ${u.status=='approved'?'ok':u.status=='pending'?'wait':'bad'}">${u.status}</span></td><td class="row"><button class="btn sm ghost" onclick="userForm('${r}','${u.id}')">Edit</button><button class="btn sm bad" onclick="delUser('${u.id}')">Delete</button></td></tr>`).join('')||'<tr><td colspan=5 class="empty">None yet.</td></tr>'}</table></div>`}
+ if(tab=='stalls')b=`<div class="bar"><h2>Food stalls</h2><button class="btn" onclick="stallForm()">+ Add stall</button></div><div class="panel scroll"><table><tr><th>Stall</th><th>Hours</th><th>Owner</th><th>Items</th><th></th></tr>${db.stalls.map(s=>`<tr><td><b>${esc(s.name)}</b><br><small>${esc(s.desc)}</small></td><td>${esc(s.hours)}</td><td>${esc(U(s.ownerId)?.name||'-')}</td><td>${db.items.filter(i=>i.stallId==s.id).length}</td><td class="row"><button class="btn sm ghost" onclick="stallForm('${s.id}')">Edit</button><button class="btn sm bad" onclick="delStall('${s.id}')">Delete</button></td></tr>`).join('')}</table></div>`;
+ if(tab=='food')b=`<div class="bar"><h2>All food items</h2><button class="btn" onclick="itemForm()">+ Add item</button></div><div class="panel scroll"><table><tr><th>Item</th><th>Stall</th><th>Price</th><th>Status</th><th></th></tr>${db.items.map(i=>`<tr><td>${esc(i.name)}</td><td>${esc(S(i.stallId)?.name)}</td><td>${money(i.price)}</td><td><span class="tag ${i.avail?'ok':'bad'}">${i.avail?'Available':'Sold out'}</span></td><td class="row"><button class="btn sm ghost" onclick="itemForm(null,'${i.id}')">Edit</button><button class="btn sm bad" onclick="delItem('${i.id}')">Delete</button></td></tr>`).join('')}</table></div>`;
+ return shell(T,b)}
+function setStatus(id,s){U(id).status=s;save();toast('Account '+s);render()}
+function userForm(r,id){const u=id?U(id):{};
+ const f=[{k:'name',l:'Full name',v:u.name},{k:'email',l:'Email',t:'email',v:u.email},{k:'pass',l:'Password',v:u.pass},
+  r=='student'?{k:'idno',l:'Student number',v:u.idno}:{k:'stall',l:'Stall name',v:S(u.stallId)?.name}];
+ if(id)f.push({k:'status',l:'Status',t:'select',o:['approved','pending','rejected'],v:u.status});
+ modal((id?'Edit ':'Add ')+r,f,v=>{
+  if(db.users.some(x=>x.id!=id&&x.email.toLowerCase()==v.email.toLowerCase())){toast('Email already used');return false}
+  if(id){Object.assign(u,{name:v.name,email:v.email,pass:v.pass,status:v.status});if(r=='student')u.idno=v.idno;else if(S(u.stallId))S(u.stallId).name=v.stall}
+  else{const n={id:uid(),role:r,name:v.name,email:v.email,pass:v.pass,status:'approved'};
+   if(r=='student')n.idno=v.idno;else{n.stallId=uid();db.stalls.push({id:n.stallId,ownerId:n.id,name:v.stall,desc:'',hours:'Set by vendor'})}db.users.push(n)}
+  save();render()})}
+function delUser(id){const u=U(id);if(!confirm('Delete '+u.name+'? This cannot be undone.'))return;
+ if(u.stallId){db.items=db.items.filter(i=>i.stallId!=u.stallId);db.stalls=db.stalls.filter(s=>s.id!=u.stallId)}
+ db.users=db.users.filter(x=>x.id!=id);save();render()}
+function stallForm(id){const s=id?S(id):{};
+ modal(id?'Edit stall':'Add stall',[{k:'name',l:'Stall name',v:s.name},{k:'desc',l:'Description',v:s.desc},{k:'hours',l:'Opening hours',v:s.hours}],v=>{
+  if(id)Object.assign(s,v);else db.stalls.push({id:uid(),ownerId:'',...v});save();render()})}
+function delStall(id){if(!confirm('Delete this stall and its food items?'))return;db.items=db.items.filter(i=>i.stallId!=id);db.stalls=db.stalls.filter(s=>s.id!=id);save();render()}
+
+/* ===== Food item CRUD (shared by admin and vendor) ===== */
+function itemForm(stallId,id){const i=id?I(id):{};
+ const f=[{k:'name',l:'Food name',v:i.name},{k:'desc',l:'Description',v:i.desc},{k:'price',l:'Price (₱)',t:'number',v:i.price}];
+ if(me.role=='admin')f.unshift({k:'stall',l:'Stall',t:'select',o:db.stalls.map(s=>s.name),v:S(i.stallId)?.name});
+ modal(id?'Edit food item':'Add new food',f,v=>{
+  const sid=me.role=='admin'?db.stalls.find(s=>s.name==v.stall)?.id:me.stallId;
+  const d={stallId:sid,name:v.name,desc:v.desc,price:+v.price};
+  if(id)Object.assign(i,d);else db.items.push({id:uid(),avail:true,...d});save();render()})}
+function delItem(id){if(!confirm('Delete this food item?'))return;db.items=db.items.filter(i=>i.id!=id);delete cart[id];save();render()}
+
+/* ===== Vendor ===== */
+function vendorView(){
+ const st=S(me.stallId),T=[['items','My food list'],['orders','Incoming orders'],['info','Stall info']];
+ let b='';
+ if(tab=='items'){const L=db.items.filter(i=>i.stallId==me.stallId);
+  b=`<div class="bar"><h2>${esc(st.name)}</h2><button class="btn" onclick="itemForm()">+ Create new food</button></div><p style="color:var(--mut);margin-top:-6px">Tick the foods that are available today. Students see this list right away.</p><div class="panel scroll"><table><tr><th>Available</th><th>Food</th><th>Price (₱)</th><th></th></tr>${L.map(i=>`<tr><td><input type="checkbox" style="width:22px;height:22px" ${i.avail?'checked':''} onchange="toggle('${i.id}',this.checked)" aria-label="Available"></td><td><b>${esc(i.name)}</b><br><small>${esc(i.desc)}</small></td><td><input type="number" min="0" step="0.5" value="${i.price}" onchange="setPrice('${i.id}',this.value)" aria-label="Price"></td><td class="row"><button class="btn sm ghost" onclick="itemForm(null,'${i.id}')">Edit</button><button class="btn sm bad" onclick="delItem('${i.id}')">Delete</button></td></tr>`).join('')||'<tr><td colspan=4 class="empty">No food yet. Create your first item.</td></tr>'}</table></div>`}
+ if(tab=='orders'){const L=db.orders.filter(o=>o.stallId==me.stallId).reverse();
+  b=`<div class="bar"><h2>Incoming pre-orders</h2></div>`+(L.length?L.map(o=>`<div class="panel"><div class="bar" style="margin:0"><div><b>#${o.id.toUpperCase()}</b> · ${esc(U(o.userId)?.name||'Student')} · <small>${o.date}</small></div><span class="tag ${statCls(o.status)}">${o.status}</span></div><p style="margin:6px 0">${o.items.map(x=>x.qty+'× '+esc(x.name)).join(', ')}</p>${stepper(o.status)}<div class="bar" style="margin:0"><b>${money(o.total)}</b> <small>${o.pay}</small><span class="row">${nextBtn(o)}</span></div></div>`).join(''):`<p class="empty">No orders yet.</p>`)}
+ if(tab=='info')b=`<div class="panel"><h2 style="font-size:30px;color:var(--maroon)">${esc(st.name)}</h2><p>${esc(st.desc)}</p><p><b>Hours:</b> ${esc(st.hours)}</p><button class="btn" onclick="myStall()">Edit stall info</button></div>`;
+ return shell(T,b)}
+const statCls=s=>s=='Ready'?'ok':s=='Completed'?'':s=='Cancelled'?'bad':'wait';
+function nextBtn(o){const n={Pending:'Preparing',Preparing:'Ready',Ready:'Completed'}[o.status];
+ return (n?`<button class="btn sm ok" onclick="setOrder('${o.id}','${n}')">Mark ${n}</button>`:'')+(['Pending','Preparing'].includes(o.status)?`<button class="btn sm bad" onclick="setOrder('${o.id}','Cancelled')">Cancel</button>`:'')}
+function setOrder(id,s){db.orders.find(o=>o.id==id).status=s;save();render()}
+function toggle(id,v){I(id).avail=v;save();toast(I(id).name+(v?' is now available':' marked sold out'))}
+function setPrice(id,v){if(v===''||+v<0)return render();I(id).price=+v;save();toast('Price updated: '+I(id).name+' '+money(v))}
+function myStall(){const s=S(me.stallId);modal('Edit stall info',[{k:'name',l:'Stall name',v:s.name},{k:'desc',l:'Description',v:s.desc},{k:'hours',l:'Opening hours',v:s.hours}],v=>{Object.assign(s,v);save();render()})}
+
+/* ===== Student ===== */
+function studentView(){
+ const n=Object.values(cart).reduce((a,b)=>a+b,0);
+ const T=[['menu','Menu'],['stalls','Stalls'],['cart',`Cart${n?' ('+n+')':''}`],['orders','My orders']];
+ const vis=db.stalls.filter(stallVisible);let b='';
+ if(tab=='menu'){
+  const L=db.items.filter(i=>{const s=S(i.stallId);return s&&stallVisible(s)&&(!fStall||s.id==fStall)&&i.name.toLowerCase().includes(q.toLowerCase())});
+  b=`<div class="bar"><h2>Today's menu</h2><div class="row"><input id="q" placeholder="Search food" value="${esc(q)}" oninput="q=this.value;keep()" style="width:180px"><select style="width:190px" onchange="fStall=this.value;render()"><option value="">All stalls</option>${vis.map(s=>`<option value="${s.id}" ${fStall==s.id?'selected':''}>${esc(s.name)}</option>`).join('')}</select></div></div><div class="grid">${L.map(i=>`<div class="card"><div class="thumb">${emo(i.name)}</div><h3>${esc(i.name)}</h3><p>${esc(i.desc)}</p><small>${esc(S(i.stallId).name)}</small><div class="bar" style="margin:4px 0 0"><span class="price">${money(i.price)}</span><span class="tag ${i.avail?'ok':'bad'}">${i.avail?'Available':'Sold out'}</span></div><button class="btn sm" ${i.avail?'':'disabled'} onclick="add('${i.id}')">Add to cart</button></div>`).join('')||'<p class="empty">No food found.</p>'}</div>`}
+ if(tab=='stalls')b=`<div class="bar"><h2>Lagoon food stalls</h2></div>`+vis.map(s=>`<div class="panel"><h3 style="font-size:28px;color:var(--maroon)">${esc(s.name)}</h3><p style="margin:2px 0">${esc(s.desc)}</p><p style="margin:2px 0 10px"><b>Open:</b> ${esc(s.hours)}</p><div class="scroll"><table><tr><th>Item</th><th>Price</th><th>Availability</th></tr>${db.items.filter(i=>i.stallId==s.id).map(i=>`<tr><td>${esc(i.name)}</td><td>${money(i.price)}</td><td><span class="tag ${i.avail?'ok':'bad'}">${i.avail?'Available':'Sold out'}</span></td></tr>`).join('')||'<tr><td colspan=3 class="empty">No items posted yet.</td></tr>'}</table></div></div>`).join('');
+ if(tab=='cart'){const L=cartLines(),t=L.reduce((a,l)=>a+l.it.price*l.q,0);
+  b=`<div class="bar"><h2>Order summary</h2></div>`+(L.length?`<div class="panel scroll"><table><tr><th>Item</th><th>Stall</th><th>Qty</th><th>Subtotal</th></tr>${L.map(l=>`<tr><td>${esc(l.it.name)}</td><td>${esc(S(l.it.stallId).name)}</td><td><div class="qty"><button onclick="qty('${l.it.id}',-1)" aria-label="Less">−</button>${l.q}<button onclick="qty('${l.it.id}',1)" aria-label="More">+</button></div></td><td>${money(l.it.price*l.q)}</td></tr>`).join('')}</table><p class="tot">Total: ${money(t)}</p><div class="row"><button class="btn" onclick="checkout()">Pay with e-payment</button></div></div>`:`<p class="empty">Your cart is empty. Browse the menu to add food.</p>`)}
+ if(tab=='orders'){const L=db.orders.filter(o=>o.userId==me.id).reverse();
+  b=`<div class="bar"><h2>Order history</h2></div>`+(L.length?L.map(o=>`<div class="panel"><div class="bar" style="margin:0"><div><b>#${o.id.toUpperCase()}</b> · ${esc(S(o.stallId)?.name||'Stall')} · <small>${o.date}</small></div><span class="tag ${statCls(o.status)}">${o.status}</span></div><p style="margin:6px 0">${o.items.map(x=>x.qty+'× '+esc(x.name)+' ('+money(x.price)+')').join(', ')}</p>${stepper(o.status)}<b>${money(o.total)}</b> <small>· ${o.pay}</small></div>`).join(''):`<p class="empty">No orders yet.</p>`)}
+ return shell(T,b)}
+function keep(){render();const e=document.getElementById('q');if(e){e.focus();e.setSelectionRange(q.length,q.length)}}
+const cartLines=()=>Object.entries(cart).map(([id,q])=>({it:I(id),q})).filter(l=>l.it&&l.it.avail);
+function add(id){cart[id]=(cart[id]||0)+1;toast('Added to cart');render()}
+function qty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];render()}
+function checkout(){const L=cartLines();if(!L.length)return;const t=L.reduce((a,l)=>a+l.it.price*l.q,0);
+ modal('E-payment (demo)',[{t:'html',l:'',h:`<p style="font-weight:400;margin:0 0 4px">Total to pay: <b>${money(t)}</b><br><small>No real payment is made. Use any number.</small></p>`},
+  {k:'m',l:'Payment method',t:'select',o:['GCash','Maya','Credit/Debit card']},{k:'n',l:'Mobile or card number',v:''}],v=>{
+  const by={};L.forEach(l=>(by[l.it.stallId]??=[]).push(l));
+  Object.entries(by).forEach(([sid,ls])=>db.orders.push({id:uid(),userId:me.id,stallId:sid,items:ls.map(l=>({id:l.it.id,name:l.it.name,price:l.it.price,qty:l.q})),total:ls.reduce((a,l)=>a+l.it.price*l.q,0),status:'Pending',pay:'Paid via '+v.m+' (demo)',date:new Date().toLocaleString('en-PH')}));
+  cart={};save();tab='orders';toast('Payment successful. Your order was sent to the stall.');render()},'Pay '+money(t))}
+
+/* ===== Live updates: order-ready popup for students ===== */
+let sig='';
+setInterval(()=>{if(!me||document.getElementById('modal').style.display=='flex')return;
+ const fresh=load();if(JSON.stringify(fresh)==JSON.stringify(db))return;db=fresh;
+ if(me.role=='student')db.orders.filter(o=>o.userId==me.id&&o.status=='Ready'&&!o.seen).forEach(o=>{o.seen=1;save();toast('Your order #'+o.id.toUpperCase()+' from '+S(o.stallId)?.name+' is ready for pickup!','ready')});
+ if(['orders','menu','stalls','items'].includes(tab)&&document.activeElement.tagName!='INPUT')render()},3000);
+render();
+</script>
+</body>
+</html>
